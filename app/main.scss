@@ -1,0 +1,113 @@
+// not using normalize 'support-for' older browers
+@import "../bower_components/normalize-scss/sass/support-for";
+@import "normalize-variables";
+@import "../bower_components/normalize-scss/sass/normalize/vertical-rhythm";
+@import "../bower_components/normalize-scss/sass/normalize/normalize-mixin";
+
+@import '../bower_components/sass-toolkit/stylesheets/toolkit';
+@import '../bower_components/susy/sass/susy';
+
+/* Changing Susy default global settings */
+$susy: (
+  /* Tells Susy to use 12 columns */
+  columns: 12,
+  
+  /* Tells Susy that the container has a max-width of 1120px */
+  container: 1120px,
+  
+  /* Tells Susy to use border-box */
+  global-box-sizing: border-box 
+);
+
+/* Makes border-box properties */
+@include border-box-sizing;
+
+// will remove some of this an customise it (such as links, making use 'is-mouseuser' and 'is-touchuser'), but mainly because it has a hover state, which should only apply to mouse users
+//$incl: root, html5, links, text, embedded, grouping, forms;
+$exl: links;
+@include normalize(all, $exl);
+
+.l-wrap {
+  @include container;
+}
+
+
+/* Mobile First */
+.l-8-lp {
+	// for laptop and down
+	@media (max-width: 1169px) {
+		@include span(8);
+	}
+}
+
+.l-4-lp {
+	// for laptop and down
+	@media (max-width: 1169px) {
+		@include span(4 last);
+	}
+}
+
+/* Desktop First */
+.l-8-up-lp {
+	// needs media queries for laptop and up
+	@media (min-width: 992px) {
+		@include span(8);
+	}
+}
+
+/* Desktop First */
+.l-4-up-lp {
+	// needs media queries for laptop and up
+	@media (min-width: 992px) {
+		@include span(4 last);
+	}
+}
+
+/* Specific break */
+.l-8-only-lp {
+	// needs media queries for laptop only
+	@media (min-width: 992px) and (max-width: 1169px) {
+		@include span(8);
+	}
+}
+
+.l-1-10 { // 10 column grid
+	// no media queries
+	@include span(3 of 10);
+}
+
+.l-1-20-up-lp { // 20 column grid
+	// needs media queries for laptop and up
+	@media (min-width: 992px) {
+		@include gallery(1 of 20);
+	}
+
+}
+
+.l-newrow {
+	clear: both;
+}
+
+
+
+.content {
+	background-color: rgba(red, 0.5);
+	min-height: 300px;
+
+	&.is-dark {
+		background-color: rgba(darken(red, 20%), 0.8);
+	}
+	.p-tint {
+		color: shade(red, 20%);
+	}
+}
+
+.rightside {
+	background-color: rgba(blue, 0.3);
+	min-height: 300px;
+}
+
+.simplebox {
+	background-color: rgba(green, 0.4);
+	height: 30px;
+}

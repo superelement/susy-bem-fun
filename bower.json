@@ -1,0 +1,29 @@
+{
+  "name": "susy-bem-fun",
+  "description": "Playing with susy and BEM",
+  "main": "gulpfile.js",
+  "authors": [
+    "Jim Doyle"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "susy",
+    "bem"
+  ],
+  "homepage": "https://github.com/superelement/susy-bem-fun",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bem-components": "^3.0.0",
+    "sass-toolkit": "^2.10.0",
+    "susy": "^2.2.12",
+    "normalize-scss": "normalize.scss#^5.0.3"
+  }
+}
